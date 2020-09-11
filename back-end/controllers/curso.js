@@ -50,4 +50,34 @@ controller.novo = async (req, res) => {
     }
 }
 
+// operação RETRIEVE (all), função listar()
+controller.listar = async (req, res) => {
+    try {
+    let dados = await Curso.find() // Traz todos os cursos cadastrados
+    res.send(dados)
+    }
+    catch(erro) {
+        console.log(erro)
+        res.status(500).send(erro)
+    }
+}
+
+// operação RETRIEVE (one), função obterUm()
+controller.obterUm = async (req, res) => {
+    try {
+        // capturando o parametro ID da url
+        const id = req.params.id
+        let obj = await Curso.findById(id)
+
+        // o objeto existe e foi encontrado
+        if (obj) res.send(obj)     // HTTP 200
+        // Não encontrado
+        else res.status(404).end() // HTTP 404: not found
+    }
+    catch(erro) {
+        console.log(erro)
+        res.status(500).send(erro)
+    }
+}
+
 module.exports = controller
