@@ -54,7 +54,10 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try {
     let dados = await Turma.find() // Traz todos os cursos cadastrados
-    res.send(dados)
+        .populate('curso')
+        .populate('professor')
+        .populate('sala_aula', 'nome capacidade') //somente nome e capacidade
+    res.send(dados) // vai com status http 200: ok
     }
     catch(erro) {
         console.log(erro)
