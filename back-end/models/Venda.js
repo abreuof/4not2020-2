@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    data: { type: Date, required: true },  
-    vendedor: { type: String, required: true },
+    data: { type: String, required: true },  
+    vendedor: { type: mongoose.ObjectId, ref: 'Vendedor', required: true },
     jogo: { type: mongoose.ObjectId, ref: 'Jogo' },
     filme: { type: mongoose.ObjectId, ref: 'Filme' },
     musica: { type: mongoose.ObjectId, ref: 'Musica' },

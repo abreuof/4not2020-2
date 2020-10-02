@@ -5,7 +5,7 @@ const esquema = mongoose.Schema({
     preco: { type: Number, required: true },
     plataforma: { type: String, required: true },
     categoria: { type: String, required: true },
-    data: { type: Date, required: true }    
+    data: { type: String, required: true }    
 })
 
 /*

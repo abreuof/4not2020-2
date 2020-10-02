@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const esquema = mongoose.Schema({
     nome: { type: String, required: true },
     preco: { type: Number, required: true },    
-    data: { type: Date, required: true }    
+    data: { type: String, required: true }    
 })
 
 /*

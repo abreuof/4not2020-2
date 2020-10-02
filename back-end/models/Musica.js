@@ -5,7 +5,7 @@ const esquema = mongoose.Schema({
     artista: { type: String, required: true },
     preco: { type: Number, required: true },
     genero: { type: String, required: true },
-    data: { type: Date, required: true }    
+    data: { type: String, required: true }    
 })
 
 /*

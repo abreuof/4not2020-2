@@ -38,4 +38,23 @@ app.use('/sala-aula', sala_aula)
 const turma = require('./routes/turma')
 app.use('/turma', turma)
 
+const jogo = require('./routes/jogo')
+app.use('/jogo', jogo)
+
+const filme = require('./routes/filme')
+app.use('/filme', filme)
+
+const musica = require('./routes/musica')
+app.use('/musica', musica)
+
+const software = require('./routes/software')
+app.use('/software', software)
+
+const vendedor = require('./routes/vendedor')
+app.use('/vendedor', vendedor)
+
+const venda = require('./routes/venda')
+app.use('/venda', venda)
+
+
 module.exports = app;
