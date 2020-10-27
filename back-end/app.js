@@ -14,6 +14,12 @@ db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.pa0w3.gcp.mongodb.net/agora_vai?r
 
 var app = express();
 
+// habilita a chamada do back end a partir de um servidor distinto
+// É necessario instalar:
+// npm install cors --save
+const cors = require('cors')
+app.use(cors())
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
