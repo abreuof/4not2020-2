@@ -1,24 +1,20 @@
 <h1>{{ title }}</h1>
 
-<form class="std-form">
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 
 	<mat-form-field>
 		<mat-label>Nome do curso</mat-label>
-		<input matInput placeholder="Informe o nome do curso"
-      [(ngModel)]="curso.nome" name="nome" required>
+		<input matInput placeholder="Informe o nome do curso" [(ngModel)]="curso.nome" name="nome" required>
   </mat-form-field>
 
-		<mat-form-field>
-			<mat-label>Ementa</mat-label>
-			<textarea matInput [(ngModel)]="curso.ementa"
-      placeholder="Informe a ementa do curso"
-      name="ementa" rows="3" required></textarea>
-		</mat-form-field>
+  <mat-form-field>
+    <mat-label>Ementa</mat-label>
+    <textarea matInput [(ngModel)]="curso.ementa" placeholder="Informe a ementa do curso" name="ementa" rows="3" required></textarea>
+  </mat-form-field>
 
-	<mat-form-field>
+  <mat-form-field>
     <mat-label>Carga horária</mat-label>
-    <input matInput type="number" [(ngModel)]="curso.carga_horaria"
-      name="carga_horaria" required>
+    <input matInput type="number" [(ngModel)]="curso.carga_horaria" name="carga_horaria" required>
   </mat-form-field>
 
   <mat-form-field>
@@ -32,8 +28,18 @@
 
   <mat-form-field>
     <mat-label>Valor do curso</mat-label>
-    <input matInput type="number" [(ngModel)]="curso.valor_curso"
-      name="valor_curso" required>
+    <input matInput type="number" [(ngModel)]="curso.valor_curso" name="valor_curso" required>
   </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
 </form>
