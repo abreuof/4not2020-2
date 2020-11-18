@@ -13,7 +13,7 @@ export class TurmaListComponent implements OnInit {
   turmas : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['nome', 'curso', 'professor', 'dias_semana', 'horario', 'sala_aula', 'editar', 'excluir']   
+  displayedColumns: string[] = ['nome', 'curso', 'professor', 'dias_semana', 'horario', 'sala_aula', 'periodo', 'editar', 'excluir']   
 
   // Injeção de dependência ou inversão de controle
   constructor(
