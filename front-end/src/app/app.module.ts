@@ -27,6 +27,12 @@ import { CursoFormComponent } from './curso/curso-form/curso-form.component';
 import { FormsModule } from '@angular/forms';
 import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
+import { FilmeListComponent } from './filme/filme-list/filme-list.component';
+import { JogoListComponent } from './jogo/jogo-list/jogo-list.component';
+import { MusicaListComponent } from './musica/musica-list/musica-list.component';
+import { SoftwareListComponent } from './software/software-list/software-list.component';
+import { VendaListComponent } from './venda/venda-list/venda-list.component';
+import { VendedorListComponent } from './vendedor/vendedor-list/vendedor-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,13 @@ import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
     CursoListComponent,
     CursoFormComponent,
     TurmaListComponent,
-    TurmaFormComponent
+    TurmaFormComponent,
+    FilmeListComponent,
+    JogoListComponent,
+    MusicaListComponent,
+    SoftwareListComponent,
+    VendaListComponent,
+    VendedorListComponent
   ],
   imports: [
     BrowserModule,
