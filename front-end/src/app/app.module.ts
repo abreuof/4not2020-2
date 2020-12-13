@@ -33,6 +33,12 @@ import { MusicaListComponent } from './musica/musica-list/musica-list.component'
 import { SoftwareListComponent } from './software/software-list/software-list.component';
 import { VendaListComponent } from './venda/venda-list/venda-list.component';
 import { VendedorListComponent } from './vendedor/vendedor-list/vendedor-list.component';
+import { VendedorFormComponent } from './vendedor/vendedor-form/vendedor-form.component';
+import { VendaFormComponent } from './venda/venda-form/venda-form.component';
+import { SoftwareFormComponent } from './software/software-form/software-form.component';
+import { JogoFormComponent } from './jogo/jogo-form/jogo-form.component';
+import { MusicaFormComponent } from './musica/musica-form/musica-form.component';
+import { FilmeFormComponent } from './filme/filme-form/filme-form.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +55,13 @@ import { VendedorListComponent } from './vendedor/vendedor-list/vendedor-list.co
     MusicaListComponent,
     SoftwareListComponent,
     VendaListComponent,
-    VendedorListComponent
+    VendedorListComponent,
+    VendedorFormComponent,
+    VendaFormComponent,
+    SoftwareFormComponent,
+    JogoFormComponent,
+    MusicaFormComponent,
+    FilmeFormComponent
   ],
   imports: [
     BrowserModule,

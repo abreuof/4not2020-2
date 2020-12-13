@@ -13,7 +13,7 @@ export class FilmeListComponent implements OnInit {
   filmes : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['nome', 'carga_horaria', 'nivel', 'valor_filme', 'editar', 'excluir']   
+  displayedColumns: string[] = ['nome', 'data', 'preco', 'editar', 'excluir']   
 
   // Injeção de dependência ou inversão de controle
   constructor(

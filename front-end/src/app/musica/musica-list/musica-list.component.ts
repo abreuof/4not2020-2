@@ -13,7 +13,7 @@ export class MusicaListComponent implements OnInit {
   musicas : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['nome', 'carga_horaria', 'nivel', 'valor_musica', 'editar', 'excluir']   
+  displayedColumns: string[] = ['nome', 'artista', 'genero', 'data', 'preco', 'editar', 'excluir']   
 
   // Injeção de dependência ou inversão de controle
   constructor(

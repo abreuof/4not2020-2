@@ -13,7 +13,7 @@ export class JogoListComponent implements OnInit {
   jogos : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['nome', 'carga_horaria', 'nivel', 'valor_jogo', 'editar', 'excluir']   
+  displayedColumns: string[] = ['nome', 'plataforma', 'data', 'preco', 'editar', 'excluir']   
 
   // Injeção de dependência ou inversão de controle
   constructor(

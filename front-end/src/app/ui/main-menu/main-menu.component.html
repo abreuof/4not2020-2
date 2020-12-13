@@ -2,6 +2,12 @@
     <mat-icon>menu</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
+  <a mat-menu-item [routerLink]="['/vendedor']">Vendedores</a>
+  <a mat-menu-item [routerLink]="['/venda']">Vendas</a>
+  <a mat-menu-item [routerLink]="['/software']">Softwares</a>
+  <a mat-menu-item [routerLink]="['/jogo']">Jogos</a>
+  <a mat-menu-item [routerLink]="['/musica']">Músicas</a>
+  <a mat-menu-item [routerLink]="['/filme']">Filmes</a>
   <a mat-menu-item [routerLink]="['/curso']">Cursos</a>
   <a mat-menu-item [routerLink]="['/turma']">Turmas</a>
 </mat-menu>
