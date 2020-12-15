@@ -1,9 +1,14 @@
+import { JogoService } from './../../jogo/jogo.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { VendaService } from '../venda.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { VendedorService } from 'src/app/vendedor/vendedor.service';
+import { MusicaService } from 'src/app/musica/musica.service';
+import { SoftwareService } from 'src/app/software/software.service';
+import { FilmeService } from 'src/app/filme/filme.service';
 
 @Component({
   selector: 'app-venda-form',
@@ -15,17 +20,22 @@ export class VendaFormComponent implements OnInit {
   // Variável para armazenar os dados do registro
   venda : any = {}  // Objeto vazio, nome no SINGULAR
 
+  title : string = 'Nova venda'
+
   // Variáveis para armazenar as listagens de objetos relacionados
   vendedores : any = []   // Vetor vazio, nome no PLURAL
   musicas : any = []
   filmes : any = []
   jogos : any = []
-  softwares : any = []
-
-  title : string = 'Nova venda'
+  softwares : any = []  
 
   constructor(
     private vendaSrv : VendaService,
+    private vendedorSrv : VendedorService,
+    private jogoSrv : JogoService,
+    private filmeSrv : FilmeService,
+    private musicaSrv : MusicaService,
+    private softwareSrv : SoftwareService,
     private snackBar : MatSnackBar,
     private location : Location,
     private actRoute : ActivatedRoute
@@ -46,6 +56,24 @@ export class VendaFormComponent implements OnInit {
         this.snackBar.open('ERRO: não foi possível carregar dados para edição.',
           'Que pena!', { duration: 5000 })
       }
+    }
+    // Carrega as listagens das entidades relacionadas
+    this.carregarDados()
+  }
+
+  async carregarDados() {
+    try {
+      this.softwares = await this.softwareSrv.listar()
+      this.filmes = await this.filmeSrv.listar()
+      this.jogos = await this.jogoSrv.listar()
+      this.softwares = await this.softwareSrv.listar()
+      this.musicas = await this.musicaSrv.listar()
+      this.vendedores = await this.vendedorSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open(`ERRO: não foi possível carregar todos os dados 
+        necessários para a página.`, 'Que pena', { duration: 5000 })
     }
   }
 
