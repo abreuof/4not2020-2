@@ -15,7 +15,14 @@ export class VendaFormComponent implements OnInit {
   // Variável para armazenar os dados do registro
   venda : any = {}  // Objeto vazio, nome no SINGULAR
 
-  title : string = 'Novo venda'
+  // Variáveis para armazenar as listagens de objetos relacionados
+  vendedores : any = []   // Vetor vazio, nome no PLURAL
+  musicas : any = []
+  filmes : any = []
+  jogos : any = []
+  softwares : any = []
+
+  title : string = 'Nova venda'
 
   constructor(
     private vendaSrv : VendaService,

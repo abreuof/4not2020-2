@@ -3,7 +3,7 @@
 <mat-toolbar class="new-item">
   <a mat-raised-button color="accent" [routerLink]="['/venda/novo']">
     <mat-icon>add_circle</mat-icon>
-    Novo venda
+    Cadastrar Venda
   </a>
 </mat-toolbar>
 
@@ -20,7 +20,7 @@
 
   <!-- Vendedor Column -->
   <ng-container matColumnDef="vendedor">
-    <th mat-header-cell *matHeaderCellDef>CH</th> 
+    <th mat-header-cell *matHeaderCellDef>Vendedor</th> 
     <td mat-cell *matCellDef="let vendedor"> {{ venda.vendedor?.nome }} </td>
   </ng-container>
 

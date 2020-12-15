@@ -1,1 +1,45 @@
-<p>musica-form works!</p>
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+	<mat-label>Nome do disco</mat-label>
+	<input matInput placeholder="Informe o nome do disco" [(ngModel)]="musica.nome" name="nome" required>
+  </mat-form-field>
+
+  <mat-form-field>
+	<mat-label>Artista</mat-label>
+	<input matInput placeholder="Informe o nome do artista" [(ngModel)]="musica.artista" name="artista" required>
+  </mat-form-field>
+
+  <mat-form-field>
+	<mat-label>Gênero</mat-label>
+	<input matInput placeholder="Informe gênero do disco" [(ngModel)]="musica.genero" name="genero" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data</mat-label>
+    <input matInput [matDatepicker]="data" name="data" 
+      [(ngModel)]="musica.data" placeholder="Informe a data"
+      required>
+    <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
+    <mat-datepicker #data></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Preço</mat-label>
+    <input matInput type="number" [(ngModel)]="musica.preco" name="preco" required>
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>

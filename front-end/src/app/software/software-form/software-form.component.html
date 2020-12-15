@@ -1,1 +1,45 @@
-<p>software-form works!</p>
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+	<mat-label>Nome do software</mat-label>
+	<input matInput placeholder="Informe o nome do software" [(ngModel)]="software.nome" name="nome" required>
+  </mat-form-field>
+
+  <mat-form-field>
+	<mat-label>Plataforma</mat-label>
+	<input matInput placeholder="Informe a plataforma do software" [(ngModel)]="software.plataforma" name="plataforma" required>
+  </mat-form-field>
+
+  <mat-form-field>
+	<mat-label>Categoria</mat-label>
+	<input matInput placeholder="Informe a categoria do software" [(ngModel)]="software.categoria" name="categoria" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data</mat-label>
+    <input matInput [matDatepicker]="data" name="data" 
+      [(ngModel)]="software.data" placeholder="Informe a data"
+      required>
+    <mat-datepicker-toggle matSuffix [for]="data"></mat-datepicker-toggle>
+    <mat-datepicker #data></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Preço</mat-label>
+    <input matInput type="number" [(ngModel)]="software.preco" name="preco" required>
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>
